@@ -1,1 +1,1 @@
-# Employees
+A sample code for DJango web application.
