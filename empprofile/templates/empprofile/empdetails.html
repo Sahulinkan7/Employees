@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1> Employee details </h1>
+        <div class="card col-3">
+            <div class="card-body">
+                <img class="card-img-top" src="{{emp.image.url}}" style="height:200px" alt="">
+                <p class="card-text">{{emp.first_name}}</p>
+                <p class="card-text">{{emp.email}}</p>
+                <p class="card-text">{{emp.phone}}</p>
+            </div>
+        </div>
+
+        <a href="{% url 'home' %}"><button class="btn btn-primary">Back to Home</button></a>
+    </div>
+    
+</body>
+</html>

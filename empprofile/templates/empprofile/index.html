@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee table</h1>
+        <table class="table">
+            <tr>
+                <th>Employee ID </th>
+                <th>Employee Name </th>
+                <th>Employee Email</th>
+            </tr>
+            {% for emp in employees %}
+                <tr>
+                    <td>{{emp.id}}</td>
+                    <td><a href="{% url 'emp_details' emp.id %}">{{emp.first_name}}</a></td>
+                    <td>{{emp.email}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
